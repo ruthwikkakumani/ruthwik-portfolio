@@ -1,7 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom/client";
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import App from "./App";
 import "../index.css";
+
+injectSpeedInsights();
 
 const queryClient = new QueryClient();
 
