@@ -17,6 +17,7 @@ import {
   SiJavascript,
   SiMongodb,
   SiMysql,
+  SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiPython,
@@ -71,6 +72,7 @@ const categories: Category[] = [
         bgAlpha: 0.08,
       },
       { label: "React", icon: SiReact, color: "#67E8F9", bgAlpha: 0.08 },
+      { label: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgAlpha: 0.08 },
     ],
   },
   {

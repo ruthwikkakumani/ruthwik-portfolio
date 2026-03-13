@@ -6,134 +6,161 @@ import { motion } from "motion/react";
 const stats = [
   {
     icon: Github,
-    title: "Active on GitHub",
-    value: "Consistent Commits",
-    description: "Regular open source contributions and personal projects.",
+    title: "Engineering Output",
+    value: "Production Ready",
+    description: "Developing robust, maintainable code with a focus on system reliability.",
   },
   {
     icon: Trophy,
-    title: "Achievement Hunter",
-    value: "Competitive Mindset",
-    description: "Always pushing for high-quality, bug-free implementations.",
+    title: "Global Standing",
+    value: "Top Performer",
+    description: "Consistently aiming for the top 5% in competitive programming and skill benchmarks.",
   },
   {
     icon: Code2,
-    title: "DSA Performance",
-    value: "Algorithm Mastery",
-    description: "Daily problem solving across complex data structures.",
+    title: "Logic Architect",
+    value: "Scalable Thinking",
+    description: "Designing efficient algorithms to solve complex real-world bottlenecks.",
   },
   {
     icon: TrendingUp,
-    title: "Growth Driven",
-    value: "Daily Progress",
-    description: "Committed to leveling up backend and architecture skills every day.",
+    title: "Deep Tech",
+    value: "Infinite Growth",
+    description: "Mastering the full stack from OS internals to modern web architectures.",
   },
 ];
 
 export default function GitHubSection() {
   return (
-    <section id="github" className="py-24 px-6 relative overflow-hidden">
-      {/* Dynamic Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="github" className="py-32 px-6 relative overflow-hidden bg-background">
+      {/* Cinematic Background Accents */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-20" />
+      <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[160px] pointer-events-none animate-pulse" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDelay: '2s' }} />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-24 text-center"
         >
-          <span className="section-label font-mono text-sm text-primary">
-            {"// 05. coding history"}
+          <span className="inline-block px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-mono text-xs text-primary mb-6 shadow-sm">
+            {"// 05. system telemetry"}
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-6xl mt-4 leading-tight">
-            GitHub & <span className="text-primary">Performance</span>
+          <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl tracking-tighter leading-none">
+            Coding <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary/80 to-blue-400">Metrics</span>
           </h2>
-          <div className="w-20 h-1 bg-primary/30 mx-auto mt-4 rounded-full" />
-          <p className="text-muted-foreground mt-6 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            Real-time coding activity and contribution statistics. Consistency is the key to engineering excellence.
+          <p className="text-muted-foreground mt-10 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            Real-time synchronization with GitHub and LeetCode. Monitoring consistency, performance, and engineering growth.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          {/* GitHub Streak Stats */}
+        {/* The "Command Center" Dashboard */}
+        <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+          
+          {/* Main Activity Monitor (GitHub Graph) */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-6 shadow-2xl hover:border-primary/30 transition-all duration-500 group"
+            className="lg:col-span-8 group relative rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-6 sm:p-10 shadow-2xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 mb-6 text-primary">
-              <Trophy className="w-4 h-4" />
-              <span className="font-mono text-xs uppercase tracking-widest font-bold">Contribution Streak</span>
+            {/* Scanline Effect */}
+            <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-50 bg-[length:100%_2px,3px_100%]" />
+            
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow-inner">
+                  <Github className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-xl text-foreground tracking-tight">GitHub Pulse</h3>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Live Link Active</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <img
-              src="https://github-readme-streak-stats.herokuapp.com/?user=ruthwikkakumani&theme=transparent&hide_border=true&stroke=00d4ff&ring=00d4ff&fire=00d4ff&currStreakNum=00d4ff&sideNums=94a3b8&sideLabels=94a3b8&dates=94a3b8"
-              alt="GitHub streak for ruthwikkakumani"
-              className="w-full rounded-lg filter drop-shadow-[0_0_10px_rgba(0,212,255,0.1)]"
-              loading="lazy"
-            />
+
+            <div className="relative overflow-x-auto pb-6 scrollbar-hide">
+              <img
+                src="https://github-chart.com/c/ruthwikkakumani?bg=00000000&color=00d4ff"
+                alt="GitHub contribution chart"
+                className="min-w-[850px] h-40 object-contain drop-shadow-[0_0_15px_rgba(0,212,255,0.15)] filter saturate-[1.2]"
+                loading="lazy"
+              />
+            </div>
+            
+            <div className="grid sm:grid-cols-2 gap-6 mt-6">
+               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
+                  <div className="bg-[#050505]/60 backdrop-blur-md rounded-[14px] p-4 flex flex-col items-center justify-center">
+                    <img 
+                      src="https://streak-stats.demolab.com/?user=ruthwikkakumani&theme=transparent&hide_border=true&stroke=00d4ff&ring=00d4ff&fire=00d4ff&currStreakNum=00d4ff&sideNums=94a3b8&sideLabels=94a3b8&dates=94a3b8" 
+                      className="w-full"
+                      alt="Streak Stats"
+                    />
+                  </div>
+               </div>
+               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent">
+                  <div className="bg-[#050505]/60 backdrop-blur-md rounded-[14px] p-4">
+                    <img 
+                      src="https://github-readme-stats.vercel.app/api?username=ruthwikkakumani&show_icons=true&theme=transparent&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000&hide_border=true&rank_icon=github" 
+                      className="w-full"
+                      alt="General Stats"
+                    />
+                  </div>
+               </div>
+            </div>
           </motion.div>
 
-          {/* LeetCode Stats */}
+          {/* LeetCode Side Monitor */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-6 shadow-2xl hover:border-orange-500/30 transition-all duration-500 group"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-4 flex flex-col gap-6"
           >
-             <div className="flex items-center gap-2 mb-6 text-orange-500">
-              <Code2 className="w-4 h-4" />
-              <span className="font-mono text-xs uppercase tracking-widest font-bold">LeetCode Performance</span>
+            <div className="group relative h-full rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-8 shadow-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-500">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20 shadow-inner">
+                  <Code2 className="w-6 h-6 text-orange-500" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-xl text-foreground tracking-tight">LeetCode Logic</h3>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-orange-500/80 font-bold">Algorithms / Data Structures</span>
+                </div>
+              </div>
+
+              <div className="flex-1 flex flex-col justify-center">
+                 <img
+                  src="https://leetcard.jacoblin.cool/RuthwikKakumani?theme=dark&font=Inter&ext=streak"
+                  alt="LeetCode stats"
+                  className="w-full rounded-xl filter drop-shadow-[0_0_20px_rgba(249,115,22,0.1)] transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+              
+              <div className="mt-10 pt-6 border-t border-white/5">
+                <Button
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-mono h-12 rounded-2xl shadow-lg shadow-orange-500/20 gap-2 transition-all transform hover:-translate-y-1"
+                  asChild
+                >
+                  <a href="https://leetcode.com/u/RuthwikKakumani/" target="_blank" rel="noopener noreferrer">
+                    Analyze Solutions <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
-            <img
-              src="https://leetcard.jacoblin.cool/RuthwikKakumani?theme=dark&font=Inter&ext=streak"
-              alt="LeetCode stats for RuthwikKakumani"
-              className="w-full rounded-lg filter drop-shadow-[0_0_10px_rgba(249,115,22,0.1)]"
-              loading="lazy"
-            />
           </motion.div>
         </div>
 
-        {/* GitHub Full Activity Graph */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16 rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-8 shadow-2xl hover:border-primary/30 transition-all duration-500 overflow-hidden group"
-        >
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3 text-primary">
-              <Github className="w-5 h-5" />
-              <span className="font-mono text-xs uppercase tracking-widest font-bold">Full Activity Graph</span>
-            </div>
-            <div className="hidden sm:flex items-center gap-4 text-[10px] uppercase tracking-tighter text-muted-foreground/60 font-bold">
-              <span>Less</span>
-              <div className="flex gap-1">
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary/5" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary/20" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary/40" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary/60" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
-              </div>
-              <span>More</span>
-            </div>
-          </div>
-          <div className="relative overflow-x-auto pb-2 scrollbar-hide">
-            <img
-              src="https://github-chart.com/c/ruthwikkakumani?bg=00000000&color=00d4ff"
-              alt="GitHub contribution chart"
-              className="min-w-[800px] h-32 object-contain"
-              loading="lazy"
-            />
-          </div>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        {/* Skill Tiles Bottom Overlay */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 mb-20">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.title}
@@ -142,71 +169,38 @@ export default function GitHubSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <Card className="bg-card/30 backdrop-blur-sm border-white/5 h-full hover:border-primary/40 hover:bg-card/50 transition-all duration-300 group">
-                <CardContent className="p-6 flex flex-col gap-4 text-center items-center">
-                  <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 w-fit group-hover:bg-primary/20 transition-all duration-300">
-                    <stat.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-sm text-foreground">
-                      {stat.title}
-                    </h3>
-                    <p className="font-mono text-[10px] text-primary mt-1 uppercase tracking-wider font-bold">
-                      {stat.value}
-                    </p>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {stat.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="bg-white/[0.02] border border-white/5 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/[0.04] transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <stat.icon className="w-4 h-4 text-primary" />
+                  <h4 className="font-mono text-[11px] uppercase tracking-widest font-bold text-foreground">{stat.title}</h4>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">{stat.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center gap-6 justify-center"
+          className="flex justify-center"
         >
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono gap-2 px-8 min-w-[200px] shadow-[0_0_24px_oklch(0.78_0.16_200_/_0.3)] hover:shadow-[0_0_32px_oklch(0.78_0.16_200_/_0.5)] transition-all"
+            className="group relative bg-primary text-primary-foreground hover:bg-primary/90 font-mono gap-3 px-12 h-16 rounded-2xl shadow-[0_0_40px_rgba(0,212,255,0.2)] overflow-hidden transition-all duration-500 hover:scale-105"
             asChild
           >
-            <a
-              href="https://github.com/ruthwikkakumani"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="w-4 h-4" />
-              View GitHub Profile
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white/10 hover:border-primary/50 bg-white/5 backdrop-blur-sm font-mono gap-2 px-8 min-w-[200px] transition-all"
-            asChild
-          >
-            <a
-              href="https://leetcode.com/u/RuthwikKakumani/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Code2 className="w-4 h-4" />
-              LeetCode Profile
-              <ExternalLink className="w-3.5 h-3.5" />
+            <a href="https://github.com/ruthwikkakumani" target="_blank" rel="noopener noreferrer">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
+              <Github className="w-5 h-5 relative z-10" />
+              <span className="relative z-10 text-base">Initialize GitHub Direct</span>
+              <ExternalLink className="w-4 h-4 relative z-10 opacity-70" />
             </a>
           </Button>
         </motion.div>
       </div>
-      
-      {/* Visual Accent */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   );
 }
