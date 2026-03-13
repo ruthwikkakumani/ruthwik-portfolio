@@ -67,10 +67,26 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/35 bg-primary/8 mb-10"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 bg-white shadow-sm mb-10"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="font-mono text-xs tracking-wide text-primary">
+          <div className="relative flex items-center justify-center w-3 h-3">
+            {[0, 1].map((i) => (
+              <motion.span 
+                key={i}
+                initial={{ scale: 1, opacity: 0.5 }}
+                animate={{ scale: 3, opacity: 0 }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity, 
+                  ease: "easeOut",
+                  delay: i * 1
+                }}
+                className="absolute w-full h-full rounded-full bg-emerald-400/40" 
+              />
+            ))}
+            <span className="relative w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+          </div>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
             Available for internships &amp; opportunities
           </span>
         </motion.div>

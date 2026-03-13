@@ -26,6 +26,22 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 
+const NextjsIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
+  <svg 
+    viewBox="0 0 128 128" 
+    fill="none" 
+    className={className} 
+    style={style}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="64" cy="64" r="64" fill="black" />
+    <path
+      d="M102.39 100.99 50.81 37.01H45.7v51.13h6.61V50.6l43.08 53.64c2.31-1.04 4.19-2.17 6.01-3.25h1zM72.39 37.01h6.61v28.84l-6.61-8.23V37.01Z"
+      fill="white"
+    />
+  </svg>
+);
+
 interface Skill {
   label: string;
   icon?: React.ComponentType<{
@@ -72,7 +88,7 @@ const categories: Category[] = [
         bgAlpha: 0.08,
       },
       { label: "React", icon: SiReact, color: "#67E8F9", bgAlpha: 0.08 },
-      { label: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgAlpha: 0.08 },
+      { label: "Next.js", icon: SiNextdotjs, color: "#E2E8F0", bgAlpha: 0.12 },
     ],
   },
   {
@@ -158,11 +174,10 @@ function SkillTile({ skill, learning }: { skill: Skill; learning?: boolean }) {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className={`relative h-28 w-28 sm:h-32 sm:w-32 rounded-3xl transition-all duration-300 ${
-        learning
+      className={`relative h-28 w-28 sm:h-32 sm:w-32 rounded-3xl transition-all duration-300 ${learning
           ? "border-2 border-primary/20 bg-primary/5 shadow-[0_0_20px_oklch(0.78_0.16_200_/_0.05)]"
           : "bg-card/40 backdrop-blur-md border border-white/5 hover:border-white/20 shadow-xl"
-      }`}
+        }`}
     >
       <div
         style={{
@@ -175,7 +190,7 @@ function SkillTile({ skill, learning }: { skill: Skill; learning?: boolean }) {
           className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg relative group"
           style={{ background: iconBg }}
         >
-          <div 
+          <div
             className="absolute inset-0 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
             style={{ backgroundColor: GlowColor }}
           />
@@ -194,12 +209,12 @@ function SkillTile({ skill, learning }: { skill: Skill; learning?: boolean }) {
           {skill.label}
         </span>
       </div>
-      
+
       {!learning && (
-        <div 
+        <div
           className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ 
-            background: `radial-gradient(circle at center, ${skill.color}15 0%, transparent 70%)` 
+          style={{
+            background: `radial-gradient(circle at center, ${skill.color}15 0%, transparent 70%)`
           }}
         />
       )}
@@ -213,7 +228,7 @@ export default function Skills() {
       {/* Background Decorative Elements */}
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDelay: '1s' }} />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -245,9 +260,8 @@ export default function Skills() {
             >
               <div className="flex items-center gap-5 mb-12">
                 <div className="h-0.5 w-12 sm:w-24 bg-gradient-to-r from-transparent via-primary/40 to-primary/10" />
-                <h3 className={`font-mono text-xs sm:text-sm uppercase tracking-[0.4em] font-black ${
-                  cat.learning ? "text-primary glow-text" : "text-foreground"
-                }`}>
+                <h3 className={`font-mono text-xs sm:text-sm uppercase tracking-[0.4em] font-black ${cat.learning ? "text-primary glow-text" : "text-foreground"
+                  }`}>
                   {cat.name}
                 </h3>
                 <div className="h-0.5 w-12 sm:w-24 bg-gradient-to-l from-transparent via-primary/40 to-primary/10" />
@@ -273,7 +287,7 @@ export default function Skills() {
           ))}
         </div>
       </div>
-      
+
       {/* Scroll indicator for the section */}
       <div className="absolute top-0 right-10 bottom-0 w-px bg-gradient-to-b from-transparent via-border/50 to-transparent hidden md:block" />
     </section>
