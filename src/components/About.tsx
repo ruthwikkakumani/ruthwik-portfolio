@@ -109,7 +109,7 @@ export default function About() {
                       variant="secondary"
                       className="font-mono text-xs bg-primary/10 text-primary border-primary/20"
                     >
-                      CGPA: 7.0
+                      CGPA: 7.66
                     </Badge>
                   </div>
                 </div>

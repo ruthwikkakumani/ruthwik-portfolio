@@ -12,13 +12,16 @@ import {
   SiExpress,
   SiGit,
   SiGithub,
+  SiGo,
   SiHtml5,
   SiJavascript,
   SiMongodb,
   SiMysql,
   SiNodedotjs,
+  SiPostgresql,
   SiPython,
   SiReact,
+  SiRedis,
   SiTailwindcss,
 } from "react-icons/si";
 
@@ -45,6 +48,7 @@ const categories: Category[] = [
     skills: [
       { label: "C", textIcon: "C", color: "#60A5FA", bgAlpha: 0.08 },
       { label: "C++", icon: SiCplusplus, color: "#60A5FA", bgAlpha: 0.08 },
+      { label: "Go", icon: SiGo, color: "#00ADD8", bgAlpha: 0.08 },
       { label: "Python", icon: SiPython, color: "#FCD34D", bgAlpha: 0.07 },
       {
         label: "JavaScript",
@@ -79,8 +83,10 @@ const categories: Category[] = [
   {
     name: "Databases",
     skills: [
-      { label: "SQL", icon: SiMysql, color: "#38BDF8", bgAlpha: 0.08 },
+      { label: "PostgreSQL", icon: SiPostgresql, color: "#336791", bgAlpha: 0.08 },
       { label: "MongoDB", icon: SiMongodb, color: "#4ADE80", bgAlpha: 0.08 },
+      { label: "Redis", icon: SiRedis, color: "#DC382D", bgAlpha: 0.08 },
+      { label: "SQL", icon: SiMysql, color: "#38BDF8", bgAlpha: 0.08 },
     ],
   },
   {

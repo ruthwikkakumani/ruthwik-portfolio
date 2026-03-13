@@ -56,7 +56,7 @@ export default function GitHubSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* GitHub Streak Stats */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -77,26 +77,61 @@ export default function GitHubSection() {
             />
           </motion.div>
 
-          {/* GitHub Overall Stats */}
+          {/* LeetCode Stats */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-6 shadow-2xl hover:border-primary/30 transition-all duration-500 group"
+            className="rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-6 shadow-2xl hover:border-orange-500/30 transition-all duration-500 group"
           >
-             <div className="flex items-center gap-2 mb-6 text-primary">
-              <TrendingUp className="w-4 h-4" />
-              <span className="font-mono text-xs uppercase tracking-widest font-bold">Overall Statistics</span>
+             <div className="flex items-center gap-2 mb-6 text-orange-500">
+              <Code2 className="w-4 h-4" />
+              <span className="font-mono text-xs uppercase tracking-widest font-bold">LeetCode Performance</span>
             </div>
             <img
-              src="https://github-readme-stats.vercel.app/api?username=ruthwikkakumani&show_icons=true&theme=transparent&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000&hide_border=true&rank_icon=github"
-              alt="GitHub stats for ruthwikkakumani"
-              className="w-full rounded-lg filter drop-shadow-[0_0_10px_rgba(0,212,255,0.1)]"
+              src="https://leetcard.jacoblin.cool/RuthwikKakumani?theme=dark&font=Inter&ext=streak"
+              alt="LeetCode stats for RuthwikKakumani"
+              className="w-full rounded-lg filter drop-shadow-[0_0_10px_rgba(249,115,22,0.1)]"
               loading="lazy"
             />
           </motion.div>
         </div>
+
+        {/* GitHub Full Activity Graph */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16 rounded-2xl border border-white/5 bg-card/40 backdrop-blur-xl p-4 sm:p-8 shadow-2xl hover:border-primary/30 transition-all duration-500 overflow-hidden group"
+        >
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3 text-primary">
+              <Github className="w-5 h-5" />
+              <span className="font-mono text-xs uppercase tracking-widest font-bold">Full Activity Graph</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-4 text-[10px] uppercase tracking-tighter text-muted-foreground/60 font-bold">
+              <span>Less</span>
+              <div className="flex gap-1">
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/5" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/20" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/40" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/60" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
+              </div>
+              <span>More</span>
+            </div>
+          </div>
+          <div className="relative overflow-x-auto pb-2 scrollbar-hide">
+            <img
+              src="https://github-chart.com/c/ruthwikkakumani?bg=00000000&color=00d4ff"
+              alt="GitHub contribution chart"
+              className="min-w-[800px] h-32 object-contain"
+              loading="lazy"
+            />
+          </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {stats.map((stat, i) => (
