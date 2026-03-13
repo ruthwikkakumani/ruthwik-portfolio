@@ -1,7 +1,12 @@
+import { useRef } from "react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Code2, Cpu, ExternalLink, Github, TrendingUp, Trophy } from "lucide-react";
-import { motion } from "motion/react";
+import { Code2, ExternalLink, Github, TrendingUp, Trophy } from "lucide-react";
 
 const stats = [
   {
@@ -29,6 +34,53 @@ const stats = [
     description: "Mastering the full stack from OS internals to modern web architectures.",
   },
 ];
+
+const ROTATION_RANGE = 20;
+const HALF_ROTATION_RANGE = 20 / 2;
+
+function DashboardCard({ children, className }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const xSpring = useSpring(x);
+  const ySpring = useSpring(y);
+  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
+    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
+    const rY = mouseX / width - HALF_ROTATION_RANGE;
+    x.set(rX);
+    y.set(rY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transformStyle: "preserve-3d",
+        transform,
+      }}
+      className={className}
+    >
+      <div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}>
+        {children}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function GitHubSection() {
   return (
@@ -61,13 +113,7 @@ export default function GitHubSection() {
         <div className="grid lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Main Activity Monitor (GitHub Graph) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-8 group relative rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-6 sm:p-10 shadow-2xl overflow-hidden"
-          >
+          <DashboardCard className="lg:col-span-8 group relative rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-6 sm:p-10 shadow-2xl overflow-hidden min-h-[500px]">
             {/* Scanline Effect */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-50 bg-[length:100%_2px,3px_100%]" />
             
@@ -96,26 +142,26 @@ export default function GitHubSection() {
             </div>
             
             <div className="grid sm:grid-cols-2 gap-6 mt-6">
-               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
-                  <div className="bg-[#050505]/60 backdrop-blur-md rounded-[14px] p-4 flex flex-col items-center justify-center">
+               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent shadow-lg">
+                  <div className="bg-[#050505]/80 backdrop-blur-md rounded-[14px] p-2 flex flex-col items-center justify-center overflow-hidden border border-white/5">
                     <img 
-                      src="https://streak-stats.demolab.com/?user=ruthwikkakumani&theme=transparent&hide_border=true&stroke=00d4ff&ring=00d4ff&fire=00d4ff&currStreakNum=00d4ff&sideNums=94a3b8&sideLabels=94a3b8&dates=94a3b8" 
-                      className="w-full"
-                      alt="Streak Stats"
+                      src="https://streak-stats.demolab.com/?user=ruthwikkakumani&theme=tokyonight&hide_border=true&stroke=00d4ff&ring=00d4ff&fire=ffaa00&currStreakNum=00d4ff&sideNums=94a3b8&sideLabels=94a3b8&dates=94a3b8&background=00000000" 
+                      className="w-full scale-105"
+                      alt="GitHub Streak Statistics"
                     />
                   </div>
                </div>
-               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent">
-                  <div className="bg-[#050505]/60 backdrop-blur-md rounded-[14px] p-4">
+               <div className="p-1 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent shadow-lg">
+                  <div className="bg-[#050505]/80 backdrop-blur-md rounded-[14px] p-2 flex flex-col items-center justify-center overflow-hidden border border-white/5">
                     <img 
-                      src="https://github-readme-stats.vercel.app/api?username=ruthwikkakumani&show_icons=true&theme=transparent&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000&hide_border=true&rank_icon=github" 
-                      className="w-full"
-                      alt="General Stats"
+                      src="https://github-readme-stats.vercel.app/api?username=ruthwikkakumani&show_icons=true&theme=tokyonight&title_color=00d4ff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000&hide_border=true&rank_icon=github" 
+                      className="w-full scale-105"
+                      alt="General GitHub Statistics"
                     />
                   </div>
                </div>
             </div>
-          </motion.div>
+          </DashboardCard>
 
           {/* LeetCode Side Monitor */}
           <motion.div
@@ -125,7 +171,7 @@ export default function GitHubSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-4 flex flex-col gap-6"
           >
-            <div className="group relative h-full rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-8 shadow-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-500">
+            <DashboardCard className="group relative h-full rounded-3xl border border-white/5 bg-card/20 backdrop-blur-2xl p-8 shadow-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-500">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20 shadow-inner">
                   <Code2 className="w-6 h-6 text-orange-500" />
@@ -155,7 +201,7 @@ export default function GitHubSection() {
                   </a>
                 </Button>
               </div>
-            </div>
+            </DashboardCard>
           </motion.div>
         </div>
 
