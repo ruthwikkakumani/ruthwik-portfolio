@@ -276,7 +276,14 @@ export default function GitHubSection() {
                   className="w-full bg-orange-500 hover:bg-orange-600 text-white font-mono h-14 rounded-2xl shadow-lg shadow-orange-500/20 gap-3 border-none transition-all duration-500 hover:-translate-y-1 hover:shadow-orange-500/40 text-sm font-black tracking-widest uppercase"
                   asChild
                 >
-                  <a href="https://leetcode.com/u/RuthwikKakumani/" target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href="https://leetcode.com/u/RuthwikKakumani/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Ruthwik Kakumani LeetCode Profile"
+                    aria-label="Ruthwik Kakumani LeetCode Profile"
+                  >
+                    <span className="sr-only">Ruthwik Kakumani LeetCode</span>
                     Analyze Engine <ExternalLink className="w-4 h-4" />
                   </a>
                 </Button>
@@ -328,7 +335,14 @@ export default function GitHubSection() {
             className="group bg-black text-white hover:bg-black/90 font-mono gap-4 px-16 h-20 rounded-[28px] shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-primary/20"
             asChild
           >
-            <a href="https://github.com/ruthwikkakumani" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://github.com/ruthwikkakumani" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Ruthwik Kakumani GitHub Profile"
+              aria-label="Ruthwik Kakumani GitHub Profile"
+            >
+              <span className="sr-only">Ruthwik Kakumani GitHub</span>
               <Github className="w-6 h-6 group-hover:rotate-12 transition-transform duration-500" />
               <span className="text-lg font-black tracking-tight">Initialize Production Sync</span>
               <ExternalLink className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-opacity duration-500" />

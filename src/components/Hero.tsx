@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import {
   ArrowDown,
+  Code2,
   Download,
   FolderOpen,
   Github,
@@ -175,8 +176,10 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl border border-border hover:border-primary/55 hover:bg-primary/8 text-muted-foreground hover:text-primary transition-all duration-200"
-            aria-label="GitHub"
+            title="Ruthwik Kakumani GitHub Profile"
+            aria-label="Ruthwik Kakumani GitHub Profile"
           >
+            <span className="sr-only">Ruthwik Kakumani GitHub</span>
             <Github className="w-5 h-5" />
           </a>
           <a
@@ -187,6 +190,17 @@ export default function Hero() {
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="https://leetcode.com/u/RuthwikKakumani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 rounded-xl border border-border hover:border-orange-500/55 hover:bg-orange-500/8 text-muted-foreground hover:text-orange-500 transition-all duration-200"
+            title="Ruthwik Kakumani LeetCode Profile"
+            aria-label="Ruthwik Kakumani LeetCode Profile"
+          >
+            <span className="sr-only">Ruthwik Kakumani LeetCode</span>
+            <Code2 className="w-5 h-5" />
           </a>
         </motion.div>
       </div>
