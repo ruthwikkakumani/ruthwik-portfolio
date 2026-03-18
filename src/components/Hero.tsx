@@ -192,7 +192,7 @@ export default function Hero() {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="https://leetcode.com/u/RuthwikKakumani/"
+            href="https://leetcode.com/u/ruthwikkakumani/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl border border-border hover:border-orange-500/55 hover:bg-orange-500/8 text-muted-foreground hover:text-orange-500 transition-all duration-200"

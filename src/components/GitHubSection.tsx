@@ -277,7 +277,7 @@ export default function GitHubSection() {
                   asChild
                 >
                   <a 
-                    href="https://leetcode.com/u/RuthwikKakumani/" 
+                    href="https://leetcode.com/u/ruthwikkakumani/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     title="Ruthwik Kakumani LeetCode Profile"
