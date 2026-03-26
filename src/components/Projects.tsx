@@ -15,22 +15,14 @@ const projects = [
   },
   {
     id: 2,
-    name: "Task Manager API",
+    name: "Distributed Rate Limiter",
     description:
-      "Production-grade RESTful API built with Express.js and MongoDB. Features JWT authentication, role-based access control, full CRUD operations, and input validation.",
-    stack: ["Node.js", "Express.js", "MongoDB", "JWT"],
+      "A highly scalable API rate limiting service that implements token bucket and sliding window algorithms to control traffic effectively across distributed systems.",
+    stack: ["Go", "Redis", "Docker", "gRPC"],
     github: "https://github.com/ruthwikkakumani",
   },
   {
     id: 3,
-    name: "DSA Visualizer",
-    description:
-      "Interactive tool for visualizing sorting algorithms and graph traversals. Supports bubble sort, merge sort, BFS, DFS with step-by-step animation controls.",
-    stack: ["React", "JavaScript", "CSS3"],
-    github: "https://github.com/ruthwikkakumani",
-  },
-  {
-    id: 4,
     name: "Chat App",
     description:
       "Real-time messaging application with WebSocket connections, room-based channels, user presence indicators, and message persistence with MongoDB.",
@@ -38,7 +30,7 @@ const projects = [
     github: "https://github.com/ruthwikkakumani",
   },
   {
-    id: 5,
+    id: 4,
     name: "Portfolio Website",
     description:
       "This very portfolio — designed and built from scratch with React, Tailwind CSS, and smooth animations. Responsive across all device sizes.",
@@ -52,7 +44,6 @@ const ocids = [
   "project.item.2",
   "project.item.3",
   "project.item.4",
-  "project.item.5",
 ];
 
 export default function Projects() {
