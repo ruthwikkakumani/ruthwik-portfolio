@@ -7,6 +7,14 @@ import { motion } from "motion/react";
 const projects = [
   {
     id: 1,
+    name: "URL Shortener",
+    description:
+      "A high-performance URL shortening service that converts long links into concise URLs. Features fast redirects via Redis caching, custom aliases, and persistent analytics with PostgreSQL.",
+    stack: ["Go", "Redis", "PostgreSQL"],
+    github: "https://github.com/ruthwikkakumani/url-shortener",
+  },
+  {
+    id: 2,
     name: "Task Manager API",
     description:
       "Production-grade RESTful API built with Express.js and MongoDB. Features JWT authentication, role-based access control, full CRUD operations, and input validation.",
@@ -14,7 +22,7 @@ const projects = [
     github: "https://github.com/ruthwikkakumani",
   },
   {
-    id: 2,
+    id: 3,
     name: "DSA Visualizer",
     description:
       "Interactive tool for visualizing sorting algorithms and graph traversals. Supports bubble sort, merge sort, BFS, DFS with step-by-step animation controls.",
@@ -22,7 +30,7 @@ const projects = [
     github: "https://github.com/ruthwikkakumani",
   },
   {
-    id: 3,
+    id: 4,
     name: "Chat App",
     description:
       "Real-time messaging application with WebSocket connections, room-based channels, user presence indicators, and message persistence with MongoDB.",
@@ -30,7 +38,7 @@ const projects = [
     github: "https://github.com/ruthwikkakumani",
   },
   {
-    id: 4,
+    id: 5,
     name: "Portfolio Website",
     description:
       "This very portfolio — designed and built from scratch with React, Tailwind CSS, and smooth animations. Responsive across all device sizes.",
@@ -44,6 +52,7 @@ const ocids = [
   "project.item.2",
   "project.item.3",
   "project.item.4",
+  "project.item.5",
 ];
 
 export default function Projects() {
